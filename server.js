@@ -21,9 +21,16 @@ var testHandler = function(request, response) {
     //          express-handlebars then replaces any {{<property-name>}} with values of properties from our VIEW MODEL
     // 4 - send the replaced text from express-handlebars to the client that made the request
 	response.render("home", {title: "Devon Website"});
+
 };
 
+var testHandlerP = function(request, response) {
+	response.render("prices", {heading: "Devon Website Prices"});
+}
+    
+
 app.get("/test", testHandler);
+app.get("/prices", testHandlerP);
 
 app.listen(8080);
 
