@@ -9,7 +9,7 @@ app.set("view engine", ".handlebars");
 
 var testHandler = function(request, response) {
 	console.log("Hello from Isaac");
-	response.render("home");
+	response.render("home", {title: "Devon Website"});
 };
 
 app.get("/test", testHandler);
