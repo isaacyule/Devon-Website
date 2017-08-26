@@ -32,7 +32,7 @@ var homeHandler = function(request, response) {
 };
 
 var pricesHandler = function(request, response) {
-	response.render("prices", {heading: "Devon Website Prices", title: "Devon Website - Prices"});
+	response.render("prices", {heading: "Devon Website Prices", title: "Devon Website - Best/wort Prices"});
 }
     
 
