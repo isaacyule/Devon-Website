@@ -6,13 +6,16 @@ var path = require("path");
 var app = express();
 
 // for any .handlebars files (like home.handlebars), use "express-handlebars" package
-app.engine(".handlebars", expressHandlebars({extname: ".handlebars"}));
+app.engine(".handlebars", expressHandlebars({extname: ".handlebars", defaultLayout: "defaultlayout"}));
 
 // set .handlebars as files which should be rendered as views
 app.set("view engine", ".handlebars");
 
-//
-app.use(express.static(path.join(__dirname, "/public")))
+// serves static files from public folder
+app.use(express.static(path.join(__dirname, "/public")));
+
+// sets layout of HTML as "defaut layout.handlebars"
+// app.set("view options", {layout: "defaultlayout"});
 
 var homeHandler = function(request, response) {
     console.log("Hello from Isaac");
@@ -29,7 +32,7 @@ var homeHandler = function(request, response) {
 };
 
 var pricesHandler = function(request, response) {
-	response.render("prices", {heading: "Devon Website Prices"});
+	response.render("prices", {heading: "Devon Website Prices", title: "Devon Website - Prices"});
 }
     
 
