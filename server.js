@@ -10,7 +10,7 @@ app.engine(".handlebars", expressHandlebars({extname: ".handlebars"}));
 // set .handlebars as files which should be rendered as views
 app.set("view engine", ".handlebars");
 
-var testHandler = function(request, response) {
+var homeHandler = function(request, response) {
     console.log("Hello from Isaac");
     
     // 0 - when we go to "/test" URL, handle it here
@@ -24,13 +24,13 @@ var testHandler = function(request, response) {
 
 };
 
-var testHandlerP = function(request, response) {
+var pricesHandler = function(request, response) {
 	response.render("prices", {heading: "Devon Website Prices"});
 }
     
 
-app.get("/test", testHandler);
-app.get("/prices", testHandlerP);
+app.get("/", homeHandler);
+app.get("/prices", pricesHandler);
 
 app.listen(8080);
 
