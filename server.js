@@ -1,5 +1,6 @@
 var express = require("express");
 var expressHandlebars = require("express-handlebars");
+var path = require("path");
 
 // create express app
 var app = express();
@@ -9,6 +10,9 @@ app.engine(".handlebars", expressHandlebars({extname: ".handlebars"}));
 
 // set .handlebars as files which should be rendered as views
 app.set("view engine", ".handlebars");
+
+//
+app.use(express.static(path.join(__dirname, "/public")))
 
 var homeHandler = function(request, response) {
     console.log("Hello from Isaac");
