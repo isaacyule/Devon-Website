@@ -6,7 +6,7 @@ var path = require("path");
 var app = express();
 
 // for any .handlebars files (like home.handlebars), use "express-handlebars" package
-app.engine(".handlebars", expressHandlebars({extname: ".handlebars", defaultLayout: "defaultlayout"}));
+app.engine(".handlebars", expressHandlebars({extname: ".handlebars", defaultLayout: "layout"}));
 
 // set .handlebars as files which should be rendered as views
 app.set("view engine", ".handlebars");
